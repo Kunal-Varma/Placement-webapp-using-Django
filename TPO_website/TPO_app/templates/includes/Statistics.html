@@ -1,0 +1,171 @@
+{% extends "includes/index.html" %}
+{% include 'includes/messages.html' %}
+
+{% load bulma_tags %}
+{% load static %}
+<link href="{% static '/css/styles.css' %}" rel="stylesheet">
+<title>{% block title%}Statistics{% endblock %}</title>
+{% block content %}
+<br>
+<h1 class="title has-text-centered">Companies Recruiting</h1>
+<div class="tile is-ancestor">
+    <div class="tile is-6 is-vertical is-parent">
+        <div class="tile is-child box">
+            <canvas id="horizontalBarChartCanvas"></canvas>
+        </div>
+    </div>
+    <div class="tile is-parent">
+        <div class="tile is-child box">
+            <p class="title has-text-centered">Highest & Average Package </p>
+            <div>
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="field is-grouped is-pulled-right">
+    <p class="control">
+        <a href="{% static 'images/Placement2016-17.docx' %}" download>
+        
+            <button class="button is-light " style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;">
+                <strong>
+    
+                    Placement Report 2016-17
+                </strong>
+            </button>
+        </a>
+    </p>
+    <p class="control">
+        <a href="{% static 'images/Placement2017-18.docx' %}" download>
+        
+            <button class="button is-primary is-light">
+                <strong>
+    
+                    Placement Report 2017-18
+                </strong>
+    
+            </button>
+        </a>
+
+    </p>
+    <p class="control">
+        <a href="{% static 'images/Placement2018-19.docx' %}" download>
+        
+            <button class="button is-danger is-light">
+                <strong>
+    
+                    Placement Report 2018-19
+                </strong>
+    
+            </button>
+        </a>
+    </p>
+</div><br>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.bundle.js'></script><br>
+<section class="section">
+    <div class="container has-text-centered">
+        <h1 class="title">
+            STATISTICS
+        </h1>
+        <br>
+    </div>
+    <div class="tabs is-fullwidth is-toggle ">
+        <div class="container">
+            <ul>
+                <li class="tab is-active" onclick="openTab(event,'WebDev')"><a>2019-20</a></li>
+                <li class="tab" onclick="openTab(event,'WebAud')"><a>2018-19</a></li>
+                <li class="tab" onclick="openTab(event,'Support')"><a>2017-18</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<div class="container section ml-6">
+    <div id="WebDev" class="content-tab">
+        <div class="columns is-mobile">
+            <div class="column">BRANCHES</div>
+            <div class="column">TOTAL</div>
+            <div class="column">PLACED</div>
+            <div class="column">PERCENTAGE</div>
+        </div>
+        <div class="columns is-mobile">
+            <div class="column is-size-4">CS</div>
+            <div class="column title" data-count="290">0</div>
+            <div class="column title" data-count="270">0</div>
+            <div class="column title" data-count="93">0</div>
+        </div>
+        <div class="columns is-mobile">
+            <div class="column is-size-4">IT</div>
+            <div class="column title" data-count="350">0</div>
+            <div class="column title" data-count="320">0</div>
+            <div class="column title" data-count="91">0</div>
+        </div>
+        <div class="columns is-mobile">
+            <div class="column is-size-4">EXTC</div>
+            <div class="column title" data-count="150">0</div>
+            <div class="column title" data-count="95">0</div>
+            <div class="column title" data-count="63">0</div>
+        </div>
+    </div>
+    <div id="WebAud" class="content-tab" style="display:none">
+        <div class="columns is-mobile">
+            <div class="column">BRANCHES</div>
+            <div class="column">TOTAL</div>
+            <div class="column">PLACED</div>
+            <div class="column">PERCENTAGE</div>
+        </div>
+        <div class="columns is-mobile">
+            <div class="column is-size-4">CS</div>
+            <div class="column title" data-count="260">0</div>
+            <div class="column title" data-count="210">0</div>
+            <div class="column title" data-count="81">0</div>
+        </div>
+        <div class="columns is-mobile">
+            <div class="column is-size-4">IT</div>
+            <div class="column title" data-count="380">0</div>
+            <div class="column title" data-count="310">0</div>
+            <div class="column title" data-count="81">0</div>
+        </div>
+        <div class="columns is-mobile">
+            <div class="column is-size-4">EXTC</div>
+            <div class="column title" data-count="110">0</div>
+            <div class="column title" data-count="90">0</div>
+            <div class="column title" data-count="81">0</div>
+        </div>
+    </div>
+    <div id="Support" class="content-tab" style="display:none">
+        <div class="columns is-mobile">
+            <div class="column">BRANCHES</div>
+            <div class="column">TOTAL</div>
+            <div class="column">PLACED</div>
+            <div class="column">PERCENTAGE</div>
+        </div>
+        <div class="columns is-mobile">
+            <div class="column is-size-4">CS</div>
+            <div class="column title" data-count="200">0</div>
+            <div class="column title" data-count="140">0</div>
+            <div class="column title" data-count="70">0</div>
+        </div>
+        <div class="columns is-mobile">
+            <div class="column is-size-4">IT</div>
+            <div class="column title" data-count="260">0</div>
+            <div class="column title" data-count="220">0</div>
+            <div class="column title" data-count="85">0</div>
+        </div>
+        <div class="columns is-mobile">
+            <div class="column is-size-4">EXTC</div>
+            <div class="column title" data-count="170">0</div>
+            <div class="column title" data-count="140">0</div>
+            <div class="column title" data-count="82">0</div>
+        </div>
+    </div>
+
+    </section>
+    <script src="{% static 'js/counter2.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="{% static 'js/Chart.js' %}"></script>
+    <script src="{% static 'js/ChartHorizontal.js' %}"></script>
+
+
+    {% endblock %}

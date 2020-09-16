@@ -1,0 +1,47 @@
+{% extends "includes/index.html" %}
+{% include 'includes/messages.html' %}
+
+{% load static %}
+    <title>{% block title%}Register Here{% endblock %}</title>
+    {% load bulma_tags %}
+    {% block content %}
+    <br>
+    <div class="tile is-ancestor">
+      <div class="tile is-6 is-vertical is-parent">
+              <article class="tile is-child">
+                  <div class="content">
+                  <figure class="image is-4by3">
+                      <img src="{% static 'images/Register.svg'%}">
+                      </figure>
+                  </div>
+              </article>
+      </div>
+      <div class="tile is-parent">
+          <div class="tile is-child box">
+            <p class="title">Sign Up</p>
+            <p>
+                <form action="" method="POST" class="form-group">
+                    {% csrf_token %}
+                    {{form|bulma}}
+                    <button type="submit" class="button is-success is-light "><strong><i class="fas fa-user-plus"></i>  Register</strong></button>
+                </form>
+            </p>
+          </div>
+      </div>
+    </div>
+    <!-- <div class="tile is-ancestor">
+        <div class="tile is-parent">
+          <div class="tile is-child box">
+            <p class="title">Sign Up</p>
+            <p>
+                <form action="" method="POST" class="form-group">
+                    {% csrf_token %}
+                    {{form|bulma}}
+                    <button type="submit" class="button is-success is-light is-rounded"><strong>Register</strong></button>
+                </form>
+            </p>
+          </div>
+        </div>
+      </div> -->
+            
+    {% endblock %}

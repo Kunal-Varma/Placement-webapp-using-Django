@@ -1,0 +1,411 @@
+{% extends "includes/index.html" %}
+{% include 'includes/messages.html' %}
+
+{% load bulma_tags %}
+{% load static %}
+<link href="{% static '/css/styles.css' %}" rel="stylesheet">
+<title>{% block title%}Companies{% endblock %}</title>
+{% block content %}
+<br>
+<!-- COMPANY STARTS -->
+{% if user.is_superuser %}
+<a href="/add_company">
+    <button class="button is-light is-outlined is-pulled-right"
+        style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong><i class="fa fa-plus-circle"
+                aria-hidden="true"></i> Add Company</strong></button>
+</a>
+{% endif %}
+<h1 class="title">OUR COMPANIES</h1>
+
+<div class="tile is-ancestor mt-6">
+    <div class="tile is-parent">
+        <div class="tile is-child " id="events">
+            <div class="tile is-ancestor">
+                <div class="tile is-parent">
+                    <article class="tile is-child ">
+                        <div class="card mx-4">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="{% static 'images/google.png'%}" alt="Event 1">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title">Google</p>
+                                <div class="content">
+                                    <p>Salary: <strong>10-12 LPA</strong> </p>
+                                    <p>Role: <strong>SDE</strong></p>
+                                    <a href="/register_job">
+                                        <button class="button is-light is-outlined mt-3 is-pulled-right"
+                                            style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong>Apply
+                                                Now</strong></button>
+                                    </a>
+                                    <br>
+                                    <time datetime="2016-1-1">Oct 2020</time>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child ">
+                        <div class="card mx-4">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="{% static 'images/netflix.png'%}" alt="Event 1">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title">Netflix</p>
+                                <div class="content">
+                                    <p>Salary:<strong>8-10 LPA</strong></p>
+                                    <p>Role: <strong>Business Analyst</strong></p>
+                                    <a href="/register_job">
+                                        <button class="button is-light is-outlined mt-3 is-pulled-right"
+                                            style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong>Apply
+                                                Now</strong></button>
+                                    </a>
+                                    <br>
+                                    <time datetime="2016-1-1">Sept 2020</time>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child ">
+                        <div class="card mx-4">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="{% static 'images/facebook.png'%}" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title">Facebook</p>
+                                <div class="content">
+                                    <p>Salary:<strong>12-14 LPA</strong></p>
+                                    <p>Role: <strong>SDE</strong></p>
+                                    <a href="/register_job">
+                                        <button class="button is-light is-outlined mt-3 is-pulled-right"
+                                            style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong>Apply
+                                                Now</strong></button>
+                                    </a>
+                                    <br>
+                                    <time datetime="2016-1-1">Oct 2020</time>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child ">
+                        <div class="card mx-4">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="{% static 'images/amazon.png' %}" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <p class="title">Amazon</p>
+                                <div class="content">
+                                    <p>Salary:<strong>10-12 LPA</strong></p>
+                                    <p>Role: <strong>SDE</strong></p>
+                                    <a href="/register_job">
+                                        <button class="button is-light is-outlined mt-3 is-pulled-right"
+                                            style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong>Apply
+                                                Now</strong></button>
+                                    </a>
+                                    <br>
+                                    <time datetime="2016-1-1"> Dec 2020</time>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- COMPANY ENDS -->
+<div class="container">
+    <br>
+    <section>
+        <h1 class="title">CURRENT COMPANY ROUND RESULTS </h1>
+        <!-- ROUND RESULTS -->
+        <div class="tile is-ancestor mt-6">
+            <div class="tile is-parent">
+                <div class="tile is-child " id="events">
+                    <div class="tile is-ancestor">
+                        <div class="tile is-parent">
+                            <article class="tile is-child ">
+                                <div class="card mx-4">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="{% static 'images/quantiphi.png'%}" alt="Event 1">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <p class="title">Quantiphi</p>
+                                        <div class="content">
+                                            <p>Role: <strong>SDE</strong></p>
+                                            <a href="{% static 'images/quantiphi.docx' %}" download>
+                                                <button class="button is-light is-outlined mt-3 is-pulled-right"
+                                                    style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong><i
+                                                            class="fa fa-download" aria-hidden="true"></i>
+                                                        Download</strong></button>
+                                            </a>
+                                            <br>
+                                            <time datetime="2016-1-1">2 days ago</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child ">
+                                <div class="card mx-4">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="{% static 'images/Microsoft.png'%}" alt="Event 1">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <p class="title">Microsoft</p>
+                                        <div class="content">
+                                            <p>Role: <strong>Business Analyst</strong></p>
+                                            <a href="{% static 'images/Microsoft.docx' %}" download>
+                                                <button class="button is-light is-outlined mt-3 is-pulled-right"
+                                                    style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong><i
+                                                            class="fa fa-download" aria-hidden="true"></i>
+                                                        Download</strong></button>
+                                            </a>
+                                            <br>
+                                            <time datetime="2016-1-1">1 Day ago</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child ">
+                                <div class="card mx-4">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="{% static 'images/Delloite.png'%}" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <p class="title">Deloitte</p>
+                                        <div class="content">
+                                            <p>Role: <strong>SDE</strong></p>
+                                            <a href="{% static 'images/Delloite.docx' %}" download>
+                                                <button class="button is-light is-outlined mt-3 is-pulled-right"
+                                                    style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong>
+                                                        <i class="fa fa-download" aria-hidden="true"></i>
+                                                        Download</strong></button>
+                                            </a>
+                                            <br>
+                                            <time datetime="2016-1-1">4 Days ago</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child ">
+                                <div class="card mx-4">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="{% static 'images/capegimini.png' %}" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <p class="title">Capgemini</p>
+                                        <div class="content">
+                                            <p>Role: <strong>SDE</strong></p>
+                                            <a href="{% static 'images/capegimini.docx' %}" download>
+                                                <button class="button is-light is-outlined mt-3 is-pulled-right"
+                                                    style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong><i
+                                                            class="fa fa-download" aria-hidden="true"></i>
+                                                        Download</strong></button>
+                                            </a>
+                                            <br>
+                                            <time datetime="2016-1-1">Last week</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="tile is-ancestor mt-6">
+            <div class="tile is-parent">
+                <div class="tile is-child " id="events">
+                    <div class="tile is-ancestor">
+                        <div class="tile is-parent">
+                            <article class="tile is-child ">
+                                <div class="card mx-4">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="{% static 'images/morgan.png'%}" alt="Event 1">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <p class="title">Morgan Stanley</p>
+                                        <div class="content">
+                                            <p>Role: <strong>SDE</strong></p>
+                                            <a href="{% static 'images/morgan.docx' %}" download>
+                                                <button class="button is-light is-outlined mt-3 is-pulled-right"
+                                                    style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong><i
+                                                            class="fa fa-download" aria-hidden="true"></i>
+                                                        Download</strong></button>
+                                            </a>
+                                            <br>
+                                            <time datetime="2016-1-1">2 days ago</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child ">
+                                <div class="card mx-4">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="{% static 'images/Duetsche 1.png'%}" alt="Event 1">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <p class="title">Deutsche Bank</p>
+                                        <div class="content">
+                                            <p>Role: <strong>Business Analyst</strong></p>
+                                            <a href="{% static 'images/Duetsche.docx' %}" download>
+                                                <button class="button is-light is-outlined mt-3 is-pulled-right"
+                                                    style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong><i
+                                                            class="fa fa-download" aria-hidden="true"></i>
+                                                        Download</strong></button>
+                                            </a>
+                                            <br>
+                                            <time datetime="2016-1-1">1 Day ago</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child ">
+                                <div class="card mx-4">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="{% static 'images/jpmc.png'%}" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <p class="title">JP Morgan Chase & co.</p>
+                                        <div class="content">
+                                            <p>Role: <strong>SDE</strong></p>
+                                            <a href="{% static 'images/JPMC.docx' %}" download>
+                                                <button class="button is-light is-outlined mt-3 is-pulled-right"
+                                                    style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong><i
+                                                            class="fa fa-download" aria-hidden="true"></i>
+                                                        Download</strong></button>
+                                            </a>
+                                            <br>
+                                            <time datetime="2016-1-1">4 Days ago</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="tile is-parent">
+                            <article class="tile is-child ">
+                                <div class="card mx-4">
+                                    <div class="card-image">
+                                        <figure class="image is-4by3">
+                                            <img src="{% static 'images/goldman.png' %}" alt="Placeholder image">
+                                        </figure>
+                                    </div>
+                                    <div class="card-content">
+                                        <p class="title">Goldman Sach</p>
+                                        <div class="content">
+                                            <p>Role: <strong>SDE</strong></p>
+                                            <a href="{% static 'images/goldman.docx' %}" download>
+                                                <button class="button is-light is-outlined mt-3 is-pulled-right"
+                                                    style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong><i
+                                                            class="fa fa-download" aria-hidden="true"></i>
+                                                        Download</strong></button>
+                                            </a>
+                                            <br>
+                                            <time datetime="2016-1-1">Last week</time>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ROUND ENDS -->
+        <br>
+        <br>
+
+        <section><br>
+            <h1 class="title">UPCOMING COMPANIES AND DETAILS</h1>
+            <div class="container"> <br>
+                <div class="columns is-mobile"> <br>
+                    <div class="column is-size-4">COMPANIES</div>
+                    <div class="column is-size-4">DATES</div>
+                    <div class="column is-size-4">DETAILS</div>
+                </div>
+                <div class="columns is-mobile"> <br>
+                    <div class="column">
+                        <img src="https://img.icons8.com/color/96/000000/dell--v1.png" /></div>
+                    <div class="column"><br><b>28 / 7 / 19</b></div>
+
+                    <div class="column"><br>
+                        <a href="{% static 'images/DELL Brochure.pdf' %}" download>
+
+                            <button class="button is-light"style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong><i
+                                class="fa fa-download" aria-hidden="true"></i>  Download Brochure</strong></button>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="columns is-mobile"> <br>
+                    <div class="column">
+                        <img src="https://img.icons8.com/color/96/000000/oracle-logo.png" />
+                    </div>
+                    <div class="column"><br><b>15 / 8 / 19</b></div>
+
+                    <div class="column"><br>
+                        <a href="{% static 'images/ORACLE Brochure.pdf' %}" download>
+
+                            <button class="button is-light"style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong><i
+                                class="fa fa-download" aria-hidden="true"></i>  Download Brochure</strong></button>
+                        </a>
+                    </div>
+                </div>
+                <div class="columns is-mobile"> <br>
+                    <div class="column">
+                        <img src="https://img.icons8.com/color/96/000000/ibm.png" />
+                    </div>
+                    <div class="column"><br><b>10 / 1 / 20</b></div>
+
+                    <div class="column"><br>
+                        <a href="{% static 'images/IBM Brochure.pdf' %}" download>
+                            <button class="button is-light"style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong><i
+                                class="fa fa-download" aria-hidden="true"></i>  Download Brochure</strong></button>
+                        </a>
+                    </div>
+                </div>
+        </section>
+        <br><br>
+        <section>
+
+
+            {% endblock %}

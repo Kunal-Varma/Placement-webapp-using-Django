@@ -1,0 +1,52 @@
+{% extends "includes/index.html" %}
+{% include 'includes/messages.html' %}
+
+{% load bulma_tags %}
+{% load static %}
+
+<link href="{% static '/css/styles.css' %}" rel="stylesheet">
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+<title>{% block title%}Login Here{% endblock %}</title>
+{% block content %}
+<br><br>
+<div class="tile is-ancestor">
+    <div class="tile is-6 is-vertical is-parent">
+        <article class="tile is-child">
+            <div class="content">
+                <figure class="image is-4by3">
+                    <img src="{% static 'images/LoginSVG.svg'%}">
+                </figure>
+            </div>
+        </article>
+    </div>
+    <div class="tile is-parent">
+        <div class="tile is-child box">
+            <p class="title mt-6">Log In</p>
+            <p>
+            <form action="" method="post" class="form-group">
+                {% csrf_token %}
+                {{form |bulma}}
+                <p>Don't have an account? Create one <a href="/register">here</a></p><br>
+                <button type="submit" class="button is-danger is-light "><strong><i class="fas fa-sign-in-alt"></i>  Login</strong></button>
+            </form>
+            </p>
+        </div>
+    </div>
+</div>
+<!-- <div class="tile is-ancestor">
+        <div class="tile is-parent">
+            <div class="tile is-child box">
+                <p class="title">Log In</p>
+                <p>
+                    <form action="" method="post"class="form-group">
+                        {% csrf_token %}
+                        {{form |bulma}}
+                        <p>Don't have an account? Create one <a href="/register">here</a></p>
+                        <button type="submit" class="button is-danger is-light is-rounded"><strong>Login</strong></button>
+                    </form>
+                </p>
+            </div>
+        </div>
+    </div>
+        -->
+{% endblock %}

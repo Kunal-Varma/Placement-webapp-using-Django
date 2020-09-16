@@ -1,0 +1,115 @@
+{% extends "includes/index.html" %}
+{% include 'extends/messages.html' %}
+
+{% load bulma_tags %}
+{% load static %}
+<link href="{% static '/css/styles.css' %}" rel="stylesheet">
+<title>{% block title%}Register Here{% endblock %}</title>
+{% block content %}
+<br>
+<div class="tile is-ancestor">
+    <div class="tile is-6 is-vertical is-parent">
+        <div class="tile is-child box">
+            <figure class="image is-4by3">
+                <img src="{% static 'images/attach.svg'%}" alt="Event 1">
+            </figure>
+        </div>
+    </div>
+    <div class="tile is-parent">
+        <div class="tile is-child box">
+            <p class="title">Apply for job:</p>
+            <form action="/register_job_submit/" method="POST">
+                {% csrf_token %}
+                <div class="field">
+                    <label class="label">Username</label>
+                    <div class="control has-icons-left has-icons-right">
+                        <input class="input " type="text" placeholder="Text input" value="{{user.username}}"
+                            name="name">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Email id</label>
+                    <div class="control">
+                        <input class="input" type="email" placeholder="" name="email" value="{{user.email}}">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Phone no</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="" name="phoneno">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">College</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="" name="college">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Graduation Year</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="YYYY" name="graduation">
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="" class="label">Company</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name="company">
+                                <option>Select Company</option>
+                                <option>Google</option>
+                                <option>Amazon</option>
+                                <option>IBM</option>
+                                <option>Microsoft</option>
+                                <option>Facebook</option>
+                                <option>JPMC</option>
+                                <option>Morgan Stanley</option>
+                                <option>Goldman Sach's</option>
+                                <option>Deutsche Bank</option>
+                                <option>Quantiphi</option>
+                                <option>Deloitte</option>
+                                <option>Capgemini</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Job Profile</label>
+                    <div class="control">
+                        <div class="select">
+                            <select name="profile">
+                                <option>Select Profile</option>
+                                <option>SDE</option>
+                                <option>Business Analyst</option>
+                                <option>UI/UX designer</option>
+                            </select>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="file has-name">
+                    <label class="file-label">
+                        <input class="file-input" type="file" name="resume">
+                        <span class="file-cta">
+                            <span class="file-icon">
+                                <i class="fas fa-upload"></i>
+                            </span>
+                            <span class="file-label">
+                                Choose a file…
+                            </span>
+                        </span>
+                        <span class="file-name">
+                            Resume.pdf
+                        </span>
+                    </label>
+                </div><br>
+                <button type="submit" class="button is-success is-light"><strong>Register</strong></button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

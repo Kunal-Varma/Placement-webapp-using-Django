@@ -1,0 +1,61 @@
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="">
+            <!-- <img src="" width="112" height="28"> -->
+            <img src="https://img.icons8.com/office/40/000000/code.png"/>
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="/">
+                <strong>Home</strong>
+            </a>
+            <a class="navbar-item" href="/#about" id="button">
+                <strong>Objectives</strong>
+            </a>
+            <a class="navbar-item" href="/#events" id=button1>
+                <strong>Events</strong>
+            </a>
+            <a class="navbar-item" href="/Statistics" >
+                <strong>Stats</strong>
+            </a>
+            <a class="navbar-item" href="/companies" >
+                <strong>Companies</strong>
+            </a>
+    
+    </div>
+            
+        {% if user.is_authenticated %}
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-primary is-light " href="/">
+                    <strong><i class="fa fa-user" aria-hidden="true"></i> {{user.username}}</strong>
+                    </a>
+                    <a class="button is-danger is-light" href="/logout">
+                        <strong>Log out</strong>
+                    </a>
+                </div>
+                {% else %}
+                <div class="buttons">
+                    <a class="button is-success is-light " href="/register">
+                    <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light is-danger" href="/login">
+                    <strong>Log in</strong>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        
+        {% endif %}
+    </div>
+</nav>

@@ -1,0 +1,210 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <title>{% block title %}Home{% endblock %}</title>
+    {% load static %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/top.css' %}" rel="stylesheet">
+    <link href="{% static 'css/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'css/chat.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    {% include 'includes/navbar.html' %}
+    <!-- HOME PAGE STARTS -->
+    <div class="container">
+        {% block content %}
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-7">
+                <div class="tile is-parent">
+                    <article class="tile is-child">
+                        <div class="content">
+                            <figure class="image is-4by3">
+                                <img src="{% static 'images/home.svg'%}">
+                            </figure>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="tile is-vertical is-5">
+                <article class="tile is-child mx-3">
+                    <div class="content mt-6"><br><br><br><br>
+                        <h1 class=" mx-5 mt-4 has-text-bold">WELCOME</h1>
+                        <div class="content mx-5">
+                            <p class="has-text-justified">The Placement Cell plays a crucial role in locating job
+                                opportunities for Under Graduates and Post Graduates passing out from the college by
+                                keeping in touch with reputed firms and industrial establishments.
+                                <br>The Placement Cell operates round the year to facilitate contacts between companies
+                                and graduates. The number of students placed through the campus interviews is
+                                continuously rising. </p>
+                            <a href="#about">
+
+                                <button class="button is-light "
+                                    style="background-color: rgba(105, 0, 255, 0.11);color: #6900FF;"><strong><i
+                                            class="fas fa-arrow-circle-down"></i> Get
+                                        Started</strong></button>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        {% include 'includes/messages.html' %}
+    </div>
+    <!-- HOME PAGE ENDS -->
+    <br><br><br>
+    <!-- SECTION STARTS -->
+    <section class="hero is-small is-bold" style="background-color:#F5F5F5" id="about">
+        <div class="hero-body">
+            <div class="container">
+                <div class="tile is-ancestor">
+                    <div class="tile is-6 is-vertical is-parent">
+                        <article class="tile is-child box">
+                            <div class="content">
+                                <figure class="image is-4by3">
+                                    <img src="{% static 'images/business.svg'%}">
+                                </figure>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="tile is-parent">
+                        <div class="tile is-child ">
+                            <h1 class="title mt-6">OBJECTIVES</h1>
+                            <ul>
+                                <li><b>1.</b> Developing the students to meet the Industries recruitment process</li>
+                                <br>
+                                <li><b>2.</b> To motivate students to develop Technical knowledge and soft skills in
+                                    terms of career planning, goal setting</li><br>
+                                <li><b>3.</b> To motivate students aspire for higher studies and guiding them to take
+                                    competitive exams such as CAT, GATE, TOEFL, GRE, IES,UPSC,TNPSC etc</li><br>
+                                <li><b>4.</b> Aiming to Place the maximum number of students through campus & off-campus
+                                    interviews conducted by the top companies</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SECTION ENDS -->
+    <!-- UPCOMING EVENTS STARTS -->
+    <div class="container">
+        {% if user.is_authenticated %}
+        {% include 'includes/Events_login.html' %}
+        {% else %}
+        {% include 'includes/Events_not_login.html'%}
+        {% endif %}
+    </div>
+    <!-- UPCOMING EVENT ENDS -->
+    <br>
+    <!-- COMPANIES STARTS -->
+
+    <!-- COMPANIES ENDS -->
+    <div class="container" id="stats">
+        <br><br>
+        <!-- TOTAL PLACED -->
+        <div class="box">
+            <p class="title has-text-centered">Highlights</p><br>   
+            <section class="level">
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading is-size-6">Companies Visiting</p>
+                        <p class="title" id="num" data-count="84">0</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading is-size-6">Highest Package(LPA)</p>
+                        <p class="title" id="num" data-count="18.5">0</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading is-size-6">Average Package(LPA)</p>
+                        <p class="title" data-count="8">0</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading is-size-6">Highest Placements(+)</p>
+                        <p class="title" data-count="600">0</p>
+                    </div>
+                </div>
+            </section>
+        </div><br>
+        <!-- TOTAL PLACED ENDS -->
+        {% endblock %}
+        <a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+        <button class="open-button is-size-5" onclick="openForm()" style="color:#6900FF !important;"><strong><i
+                    class="fas fa-comment-alt"></i> Chat</strong></button>
+
+        <div class="chat-popup" id="myForm">
+            <form class="form-container">
+                <iframe style="border: none;border-radius: 5px;" width="280" height="390" allow="microphone;"
+                    src="https://console.dialogflow.com/api-client/demo/embedded/7dec0910-2f92-4902-849c-5c6f90718781">
+                </iframe>
+
+                <button type="button" class="button cancel is-fullwidth"
+                    style="background-color: rgba(105, 0, 255, 0.11);color:#6900FF;"
+                    onclick="closeForm()"><strong>Close</strong></button>
+            </form>
+        </div>
+        <p class="footer-heart">
+            Designed with <g-emoji class="g-emoji" alias="heart"
+                fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
+                <img class="emoji" alt="heart" height="20" width="20"
+                    src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"></g-emoji> by <a
+                href="/">Kunal Verma</a>
+        </p><br>
+    </div>
+    <!-- JS FILES -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script src="{% static 'js/tabs.js' %}"></script>
+    <style>
+
+    </style>
+    <script>
+        // ===== Scroll to Top ==== 
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+                $('#return-to-top').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+        $('#return-to-top').click(function () {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop: 0                       // Scroll to top of body
+            }, 500);
+        });
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+        $("#button").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#about").offset().top
+            }, 1000);
+        });
+        $("#button1").click(function () {
+            $('html, body').animate({
+                scrollTop: $("#events").offset().top
+            }, 1000);
+        });
+    </script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <script src="{% static 'js/counter.js' %}"></script>
+</body>
+
+</html>
