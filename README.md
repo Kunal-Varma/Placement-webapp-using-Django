@@ -2,7 +2,32 @@
 <p>🏢Website developed for training and placement office to help them organize and motivate students much more efficiently. Also, to help them get better job opportunities.</p>
 <br>
 
-![HOME Page (1)](https://user-images.githubusercontent.com/40533390/93332264-37bd4380-f83f-11ea-9826-e0b3266685df.png)
+![tp1](https://user-images.githubusercontent.com/17935364/93354040-364d4480-f85a-11ea-90b1-4e64da8c7865.png)
+
+![tp2](https://user-images.githubusercontent.com/17935364/93354157-55e46d00-f85a-11ea-8cbb-bc28872f3c2e.png)
+
+![tp3](https://user-images.githubusercontent.com/17935364/93354185-5aa92100-f85a-11ea-880c-75b369a46889.png)
+
+
+![tp4](https://user-images.githubusercontent.com/17935364/93354196-5d0b7b00-f85a-11ea-886f-1ef8acff5c7a.png)
+
+![tp5](https://user-images.githubusercontent.com/17935364/93354208-60066b80-f85a-11ea-9593-40aecfe9bf0f.png)
+
+![tp6](https://user-images.githubusercontent.com/17935364/93354246-6a286a00-f85a-11ea-9d87-9598b207b7ee.png)
+
+![tp7](https://user-images.githubusercontent.com/17935364/93354269-6f85b480-f85a-11ea-88fa-ca117752b7aa.png)
+
+![tp8](https://user-images.githubusercontent.com/17935364/93354282-74e2ff00-f85a-11ea-84a4-922d3815cb1f.png)
+
+
+
+
+
+
+
+
+
+
 
 
 <h2>Getting Started</h2>
